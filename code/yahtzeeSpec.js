@@ -22,4 +22,16 @@ describe('Yahtzee!', () => {
       expect(Yahtzee.scoreTwos([1,3,4,5,6])).toBe(0)
     })
   })
+
+  describe('score pairs', () => {
+    it('should score a pair', () => {
+      expect(Yahtzee.scorePair([1,1,2,3,4])).toBe(2)
+    })
+    it('should score highest pair', () => {
+      expect(Yahtzee.scorePair([1,1,6,6,3])).toBe(12)
+    })
+    it('should score no pair', () => {
+      expect(Yahtzee.scorePair([1,2,3,4,5])).toBe(0)
+    })
+  })
 })

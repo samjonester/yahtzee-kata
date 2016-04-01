@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "ramda": "^0.20.1"
+  },
+  "devDependencies": {
+    "jasmine-es6": "^0.1.8"
   }
 }
