@@ -27,11 +27,29 @@ describe('Yahtzee!', () => {
     it('should score a pair', () => {
       expect(Yahtzee.scorePair([1,1,2,3,4])).toBe(2)
     })
+    it('should score a pair with more than 2', () => {
+      expect(Yahtzee.scorePair([1,1,1,3,4])).toBe(2)
+    })
     it('should score highest pair', () => {
       expect(Yahtzee.scorePair([1,1,6,6,3])).toBe(12)
     })
     it('should score no pair', () => {
       expect(Yahtzee.scorePair([1,2,3,4,5])).toBe(0)
+    })
+  })
+
+  describe('score triples', () => {
+    it('should score a triple of ones', () => {
+      expect(Yahtzee.scoreTriple([1,1,1,3,4])).toBe(3)
+    })
+    it('should score a triple of fours', () => {
+      expect(Yahtzee.scoreTriple([4,4,4,6,6])).toBe(12)
+    })
+    it('should score a triple with more than 3', () => {
+      expect(Yahtzee.scoreTriple([1,1,1,1,4])).toBe(3)
+    })
+    it('should score no triple', () => {
+      expect(Yahtzee.scoreTriple([1,2,3,4,5])).toBe(0)
     })
   })
 })
